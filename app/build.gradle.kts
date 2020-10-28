@@ -2,15 +2,20 @@ plugins {
     id("com.android.application")
     kotlin("android")
     kotlin("android.extensions")
+    kotlin("kapt")
 }
 
 android {
     compileSdkVersion(30)
     buildToolsVersion = "30.0.2"
 
+    compileOptions.sourceCompatibility = JavaVersion.VERSION_1_8
+    compileOptions.targetCompatibility = JavaVersion.VERSION_1_8
+    kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8.toString()
+
     defaultConfig {
         applicationId = "com.example.template"
-        minSdkVersion(16)
+        minSdkVersion(26)
         targetSdkVersion(30)
         versionCode = 1
         versionName = "1.0"
